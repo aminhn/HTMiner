@@ -38,13 +38,6 @@ void Extend_patt(Pattern _patt) {
 
 	DFS.pop_back();
 
-/*cout << "SIZ: " << DFS.size() << " Freq: " << _patt.freq << endl;
-for (int i = 0; i < _patt.seq.size(); ++i)
-	cout << _patt.seq[i] << " ";
-cout << endl;
-
-cout << "TIME: " << give_time(clock() - start_time) << endl;
-*/	
 	vector<bool> slist(L, 0);
 	vector<bool> ilist(L, 0);
 	
@@ -187,45 +180,6 @@ cout << "TIME: " << give_time(clock() - start_time) << endl;
 			Out_patt(DFS.back().seq, DFS.back().freq);
 		++num_patt;
 	}
-
-
-
-/*	for (int i = 0; i < L; ++i) {
-cout << i << endl;
-		for (int j = 0; j < L; ++j) {
-			if (pot_patt[j].freq >= theta) 			//ilist'
-				pot_patt[i].ilist.push_back(j);
-			if (pot_patt[j + L].freq >= theta) {		//slist'
-				pot_patt[i].slist.push_back(j);
-				pot_patt[i + L].slist.push_back(j);
-				pot_patt[i + L].ilist.push_back(j);
-			}
-		}
-	}
-cout << "WTF\n";
-
-
-	for (int i = 0; i < L * 2; ++i) {
-if (i < L)
-cout << i + 1 << " " << pot_patt[i].freq << endl;
-else
-cout << -i + L - 1 << " " << pot_patt[i].freq << endl;
-		if (pot_patt[i].freq >= theta) {
-			pot_patt[i].str_pnt.shrink_to_fit();
-			DFS.push_back(pot_patt[i]);
-			DFS.back().seq = _patt.seq;
-			if (i < L)
-				DFS.back().seq.push_back(i + 1);
-			else
-				DFS.back().seq.push_back(-i + L - 1);
-			DFS.back().seq.shrink_to_fit();
-			if (b_disp || b_write) 
-				Out_patt(DFS.back().seq, DFS.back().freq);
-			++num_patt;
-		}			
-	}*/
-	
-}
 
 
 void Out_patt(vector<int>& seq, int freq) {
