@@ -39,21 +39,23 @@ COMMAND LINE USAGE
 
 COMMAND LINE COMMANDS
 
-  -folder     path containing input database file
+    -folder     	path containing input database file
 	-file		    input file name
 	-thr		    frequency threshold in mining algorithm (double precision). If 0 < thr < 1, then thr*N is used as the minumum support, where N is the total number of sequences in the input file. If thr >= 1, then thr is used as the minimum support directly.
 	-npre		    no preprocessing of input file (apriori removes non-frequent items) 
-  -time       time limit (in seconds)
+    -time       	time limit (in seconds)
  	-dic		    use if input databse events are not represented by consecutive numerical values (will encounter an error if not used when required. May be used by default)
 	-out		    display found patterns in terminal
-  -out file   output found patterns to "file" (replace "file" with intended output file name)
-  -out+file   display found patterns to terminal and also output them to "file"  
+    -out file   	output found patterns to "file" (replace "file" with intended output file name)
+    -out+file   	display found patterns to terminal and also output them to "file"  
 
 INPUT FILE 
     Input databse consists of rows of sequences, where each sequence is an ordered set of events denoted by numericals or literals. 	
     Negative events indicate the start of an itemset. Positive events fall within the same itemset as their previous negative event. Itemsets must be organized in increasing values. If itemsets are not required, sequences should be represented by all negative events.
-    Example -1 2 3 -2 -1 3 4 is equivalent to {1 2 3} {2} {1 3 4}, or commonly represented by seperators "-1" -1 1 2 3 -1 2 -1 1 3 4
-    Example -1 -3 -2 -1 -5 represents a sequence of 1 3 2 1 5 with no itemsets.
+    
+	Example -1 2 3 -2 -1 3 4 is equivalent to {1 2 3} {2} {1 3 4}, or commonly represented by seperators "-1" -1 1 2 3 -1 2 -1 1 3 4
+    
+	Example -1 -3 -2 -1 -5 represents a sequence of 1 3 2 1 5 with no itemsets.
 
 OUTPUT FILE
     Ouput file, if either -out file or out+file commanda RE used, gives rows of patterns with associated frequency. Frequency of a pattern is the number of sequences 
