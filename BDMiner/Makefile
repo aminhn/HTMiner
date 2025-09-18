@@ -27,7 +27,7 @@ vpath %.cpp $(SRC_DIRS)
 
 # ---- TARGETS ----
 
-EXECUTABLE=EffSPM
+EXECUTABLE=BDMiner
 
 all: $(EXECUTABLE)
 
